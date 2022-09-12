@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "brightscript",
+            "request": "launch",
+            "name": "BrightScript Debug: Launch",
+            "stopOnEntry": false,
+            "host": "${promptForHost}",
+            "password": "0978",
+            "rootDir": "${workspaceFolder}",
+            "retainStagingFolder": true,
+            "injectRaleTrackerTask": true,
+            "enableDebuggerAutoRecovery": false,
+            "stopDebuggerOnAppExit": false,
+            "files": [
+                "manifest",
+                "source/**/*.*",
+                "components/**/*.*",
+                "images/**/*.*",
+                "fonts/**/*.*",
+                "config/**/*.*"
+            ]
+        }
+    ]
+}

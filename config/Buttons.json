@@ -1,0 +1,75 @@
+{
+	"buttons": [
+		{
+			"labels": {
+				"default": "Button one"
+			},
+			"func": "oneButtonSelected",
+            "enable"  : true,
+            "visible" : false
+        
+		},
+		{
+			"labels": {
+				"default": "Button two"
+			},
+			"func": "twoButtonSelected",
+            "enable"  : true,
+            "visible" : true
+		},
+		{
+			"labels": {
+				"default": "Button three"
+			},
+			"func": "threeButtonSelected",
+            "enable"  : false,
+            "visible" : true
+		},
+		{
+			"labels": {
+				"default": "Button four"
+			},
+			"func": "fourButtonSelected",
+            "enable"  : true,
+            "visible" : true
+		},
+		{
+			"labels": {
+				"default": "Button five"
+			},
+			"func": "fiveButtonSelected",
+            "enable"  : true,
+            "visible" : true
+		},
+		{
+			"labels": {
+				"default": "Button six"
+			},
+			"func": "sixButtonSelected",
+            "enable"  : true,
+            "visible" : true
+		},
+		{
+			"labels": {
+				"default": "Button seven"
+			},
+			"func": "sevenButtonSelected",
+            "enable"  : true,
+            "visible" : true
+		},
+		{
+			"labels": {
+				"default": "Button eight"
+			},
+			"func": "eightButtonSelected",
+            "enable"  : true,
+            "visible" : true
+		}
+    ],
+	"visuals": {
+		"A": ["one", "two", "three", "four", "five"],
+		"B": ["one", "two", "three", "four", "five", "six", "seven", "eight"],
+		"C": ["one", "two", "three", "four", "five", "six", "seven", "eight", "one", "two", "three", "four", "five", "six", "seven", "eight"]
+	}
+}
+

@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<component name = "ButtonItem" extends = "Group" >
+  <interface>
+
+    <field id="itemContent" type="node" />
+    
+  </interface>
+  <script type="text/brightscript" uri="ButtonItem.brs"/>
+
+  <children >
+  
+    <Button
+      id="ButtonItem"
+      height = "64"
+      showFocusFootprint = "true"
+      textFont = "font:SmallBoldSystemFont"
+      focusedTextFont = "font:SmallBoldSystemFont"
+      focusFootprintBitmapUri = "pkg:/images/Button-Unfocused.png"
+      focusedIconUri = ""
+      iconUri = ""
+      />
+
+
+  </children>
+
+</component>
