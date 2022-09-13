@@ -3,24 +3,31 @@
 <component name = "ButtonItem" extends = "Group" >
   <interface>
 
-    <field id="itemContent" type="node" />
+    <field id="itemContent" type="node" onChange = "onItemContentChanged" />
     
   </interface>
   <script type="text/brightscript" uri="ButtonItem.brs"/>
 
   <children >
   
-    <Button
-      id="ButtonItem"
-      height = "64"
-      showFocusFootprint = "true"
-      textFont = "font:SmallBoldSystemFont"
-      focusedTextFont = "font:SmallBoldSystemFont"
-      focusFootprintBitmapUri = "pkg:/images/Button-Unfocused.png"
-      focusedIconUri = ""
-      iconUri = ""
-      />
+      <poster
+        id = "background"
+        width = "250"
+        height = "64"
+        uri = "pkg:/images/Button-Unfocused.png"/>
 
+      <poster
+        id = "focus"
+        visible = "false"
+        width = "250"
+        height = "64"
+        uri = "pkg:/images/Button.png"/>
+
+      <label
+        id = "label"
+        translation = "[10,10]"
+        text = ""
+        font = "font:MediumBoldSystemFont"/>
 
   </children>
 

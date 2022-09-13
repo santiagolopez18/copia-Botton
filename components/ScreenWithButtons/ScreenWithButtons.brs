@@ -2,6 +2,7 @@ sub init()
     m.ButtonTask = CreateObject("roSGNode", "ButtonTask")
     m.ButtonTask.observeField("output", "onButtonInfoReady")
     m.ButtonTask.control = "RUN" 
+    m.backgroundPoster = m.top.findNode("backgroundPoster")
     m.buttonRowList = m.top.findNode("buttonRowList")
     m.screenTitle = m.top.findNode("screenTitle")
     m.topButton = m.top.findNode("topButton")
@@ -24,6 +25,7 @@ sub _initObservers()
     m.topButton.observeField("buttonSelected", "showDialog")
     m.rowList.observeField("rowItemFocused", "onRowItemFocused")
     m.rowList.observeField("focusedChild", "onRowListFocusChange")
+    m.rowList.observeField("rowItemSelected", "onRowItemSelectedRow")
     m.buttonRowList.observeField("rowItemSelected", "onRowItemSelected")
 end sub
 
@@ -69,6 +71,13 @@ sub onRowItemSelected(event)
     m.screenTitle.text = content.TITLE
 end sub
 
+sub onRowItemSelectedRow(event)
+    indexPositions = event.getData() 
+    content = m.rowList.content.getChild(indexPositions[0]).getChild(indexPositions[1])
+    m.backgroundPoster.uri = content.HDPOSTERURL
+    
+end sub
+
 sub onDialogButtonSelected(event as Object)
     option = event.getData().toStr()
     m.top.GetScene().dialog = invalid
@@ -87,7 +96,6 @@ sub onRowItemFocused(event as Object)
     index = event.getData()[1]
 
     rowContent = m.rowList.content.getChild(row)
-
     for i = 0 to rowContent.getChildCount() - 1
         itemContent = rowContent.getChild(i)
         if i = index

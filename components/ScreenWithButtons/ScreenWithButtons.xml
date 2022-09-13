@@ -5,43 +5,49 @@
 
     <children>
         <Rectangle
-            id="background"
-            width="1920"
-            height="1080"
-            color="#ffffff"/>
+            id = "background"
+            width = "1920"
+            height = "1080"
+            color = "#ffffff"/>
+
+        <Poster
+            id = "backgroundPoster" 
+            width = "1920"
+            height = "1080"
+            uri = "pkg:/images/RowListItem.jpg"/>
             
         <Poster
-            id="poster"
-            translation="[0, 0]"
-            width="1920"
-            height="1080"
-            opacity="1.0"
-            uri="pkg:/images/mask.png"/>
+            id = "poster"
+            translation = "[0, 0]"
+            width = "1920"
+            height = "1080"
+            opacity = "1.0"
+            uri = "pkg:/images/mask.png"/>
 
         <Button
-            id="topButton"
-            minWidth="320"
-            maxWidth="320"
-            height="64"
-            focusBitmapUri="pkg:/images/Button.png"
-            focusFootprintBitmapUri="pkg:/images/Button-Unfocused.png"
-            focusedIconUri=""
-            iconUri=""
-            translation="[1550, 64]"
-            text="Change mode"
-            textColor="#5b6671"
-            focusedTextColor="#D8DADC"
-            showFocusFootprint="true"
-            textFont="font:SmallBoldSystemFont"
-            focusedTextFont="font:SmallBoldSystemFont"/>
+            id = "topButton"
+            minWidth = "320"
+            maxWidth = "320"
+            height = "64"
+            focusBitmapUri = "pkg:/images/Button.png"
+            focusFootprintBitmapUri = "pkg:/images/Button-Unfocused.png"
+            focusedIconUri = ""
+            iconUri = ""
+            translation = "[1550, 64]"
+            text = "Change mode"
+            textColor = "#5b6671"
+            focusedTextColor = "#D8DADC"
+            showFocusFootprint = "true"
+            textFont = "font:SmallBoldSystemFont"
+            focusedTextFont = "font:SmallBoldSystemFont"/>
 
         <Label
-            id="screenTitle"
-            text="select a Button"
-            translation="[100, 200]"
-            color="#D8DADC"
-            width="900"
-            font="font:LargeBoldSystemFont"/>
+            id = "screenTitle"
+            text = "select a Button"
+            translation = "[100, 250]"
+            color = "#D8DADC"
+            width = "900"
+            font = "font:LargeBoldSystemFont"/>
 
         <LayoutGroup
             id = "Group"
@@ -49,29 +55,29 @@
             translation = "[30,400]">
 
             <RowList
-                id="buttonRowList"
-                itemComponentName="ButtonItem"
+                id = "buttonRowList"
+                itemComponentName = "ButtonItem"
                 vertFocusAnimationStyle = "floatingFocus"
-                numRows="3"
-                rowItemSize="[[350, 70]]"
-                itemSize="[1920, 80]"
-                rowItemSpacing="[[10, 10]]"
-                itemSpacing="[10, 10]"/>
+                numRows = "3"
+                rowItemSize = "[[280, 70]]"
+                itemSize = "[1920, 80]"
+                rowItemSpacing = "[[10, 10]]"
+                itemSpacing = "[10, 10]"/>
 
             <RowList
-                id="rowList"
-                itemComponentName="RowListItem"
-                translation="[120, 636]"
-                numRows="1"
-                itemSize="[1920, 330]"
-                rowItemSize="[[480, 270]]"
-                itemSpacing="[0, 40]"
-                rowItemSpacing="[[24, 0]]"
-                showRowLabel="[false]"
-                drawFocusFeedback="false"
-                vertFocusAnimationStyle="fixedFocusWrap"
-                rowFocusAnimationStyle="floatingFocus"
-                visible="true"/>
+                id = "rowList"
+                itemComponentName = "RowListItem"
+                translation = "[120, 636]"
+                numRows = "1"
+                itemSize = "[1920, 330]"
+                rowItemSize = "[[480, 270]]"
+                itemSpacing = "[0, 40]"
+                rowItemSpacing = "[[24, 0]]"
+                showRowLabel = "[false]"
+                drawFocusFeedback = "false"
+                vertFocusAnimationStyle = "fixedFocusWrap"
+                rowFocusAnimationStyle = "floatingFocus"
+                visible = "true"/>
     
         </LayoutGroup>
     </children>

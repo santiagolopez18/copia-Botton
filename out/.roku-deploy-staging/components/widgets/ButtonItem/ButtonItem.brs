@@ -1,28 +1,25 @@
 sub init()
-    m.ButtonItem = m.top.findNode("ButtonItem")
+    m.label = m.top.findNode("label")
+    m.background = m.top.findNode("background")
+    m.Focus = m.top.findNode("Focus")
     m.top.observeField("focusedChild", "onFocusedChanged")
-    m.top.observeField("itemContent", "onItemContentChanged")
 end sub
 
 sub onFocusedChanged(event)
     if m.top.isInFocusChain()
-  '   textFont="font:SmallBoldSystemFont"
-   '  focusFootprintBitmapUri = "pkg:/images/Button.png"
+        m.Focus.visible = true
     else 
- '    focusedTextFont = "font:SmallBoldSystemFont"
-  '   focusFootprintBitmapUri = "pkg:/images/Button-Unfocused.png"
+        m.Focus.visible = false
     end if
 end sub
  
 sub onItemContentChanged(event)
     item = event.getData()
-    m.ButtonItem.text = item.TITLE
-    m.ButtonItem.width = "180"
-   ' m.ButtonItem.maxWidth = item.TITLE.boundingRect().width 
+    m.label.text = item.TITLE
 
-    'xAxis = (m.ButtonItem.width / 2) - (item.TITLE.boundingRect().width / 2)
-   ' yAxis = (m.ButtonItem.height / 2) - (item.TITLE.boundingRect().height / 2)
+    xAxis = (m.background.width / 2) - (m.label.boundingRect().width/2)
+    yAxis = (m.background.height / 2) - (m.label.boundingRect().height/2)
     
-   ' m.ButtonItem.translation = [xAxis, yAxis]
+    m.label.translation = [xAxis, yAxis]
 end sub
 
