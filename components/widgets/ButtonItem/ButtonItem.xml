@@ -4,8 +4,10 @@
   <interface>
 
     <field id="itemContent" type="node" onChange = "onItemContentChanged" />
+    <field id="itemHasFocus" type="Boolean" onChange = "onItemFocusChanged"/>
     
   </interface>
+
   <script type="text/brightscript" uri="ButtonItem.brs"/>
 
   <children >

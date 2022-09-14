@@ -62,7 +62,8 @@
                 rowItemSize = "[[280, 70]]"
                 itemSize = "[1920, 80]"
                 rowItemSpacing = "[[10, 10]]"
-                itemSpacing = "[10, 10]"/>
+                itemSpacing = "[10, 10]"
+                drawFocusFeedback= "false"/>
 
             <RowList
                 id = "rowList"

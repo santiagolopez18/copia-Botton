@@ -2,22 +2,13 @@ sub init()
     m.label = m.top.findNode("label")
     m.background = m.top.findNode("background")
     m.Focus = m.top.findNode("Focus")
-    m.top.observeField("focusedChild", "onFocusedChanged")
-end sub
-
-sub onFocusedChanged(event)
-    if m.top.isInFocusChain()
-        m.Focus.visible = true
-    else 
-        m.Focus.visible = false
-    end if
 end sub
  
 sub onItemContentChanged(event)
-    item = event.getData()
-    m.label.text = item.TITLE
+    m.item = event.getData()
+    m.label.text = m.item.TITLE
 
-    if item.enable = false
+    if m.item.enable = false
         m.Focus.visible = true
         m.label.color = "#6F6E6E"
     end if
@@ -31,3 +22,12 @@ sub onItemContentChanged(event)
     m.label.translation = [xAxis, yAxis]
 end sub
 
+sub onItemFocusChanged()
+    if m.item.enable = true
+        if m.top.itemHasFocus = true
+            m.Focus.visible = true
+        else 
+            m.Focus.visible = false
+        end if
+    end if
+end sub

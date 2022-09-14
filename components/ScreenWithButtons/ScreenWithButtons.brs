@@ -7,6 +7,7 @@ sub init()
     m.screenTitle = m.top.findNode("screenTitle")
     m.topButton = m.top.findNode("topButton")
     m.rowList = m.top.findNode("rowList")
+    m.previousButtonFocused = invalid 
     initRowList()
     _initObservers()
 end sub
@@ -26,6 +27,7 @@ sub _initObservers()
     m.rowList.observeField("rowItemFocused", "onRowItemFocused")
     m.rowList.observeField("focusedChild", "onRowListFocusChange")
     m.buttonRowList.observeField("rowItemSelected", "onRowItemSelected")
+    m.buttonRowList.observeField("rowItemFocused", "onButtonRowItemFocused")
 end sub
 
 sub onButtonInfoReady(event)
@@ -68,6 +70,26 @@ sub onRowItemSelected(event)
     indexPositions = event.getData() 
     content = m.buttonRowList.content.getChild(indexPositions[0]).getChild(indexPositions[1])
     m.screenTitle.text = content.TITLE
+end sub
+
+sub onButtonRowItemFocused(event)
+    indexPositions = event.getData() 
+    content = m.buttonRowList.content.getChild(indexPositions[0]).getChild(indexPositions[1])
+    totalRowElements = m.buttonRowList.content.getChild(indexPositions[0]).getChildCount()
+    offset = 0
+    if content.enable = false 
+        if m.previousButtonFocused = invalid or indexPositions[1] > m.previousButtonFocused[1]
+            offset = 1
+        else if indexPositions[1] < m.previousButtonFocused[1]
+            offset = -1   
+        end if
+        indexPositions[1] = indexPositions[1] + offset
+        if indexPositions[1] < 0 or indexPositions[1] > totalRowElements -1 then indexPositions[1] = m.previousButtonFocused[1] 
+        m.buttonRowList.jumpToRowItem = indexPositions
+    end if
+
+    m.previousButtonFocused = indexPositions 
+
 end sub
 
 sub onDialogButtonSelected(event as Object)
