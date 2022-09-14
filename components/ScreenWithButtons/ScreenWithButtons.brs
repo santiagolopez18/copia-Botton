@@ -25,7 +25,6 @@ sub _initObservers()
     m.topButton.observeField("buttonSelected", "showDialog")
     m.rowList.observeField("rowItemFocused", "onRowItemFocused")
     m.rowList.observeField("focusedChild", "onRowListFocusChange")
-    m.rowList.observeField("rowItemSelected", "onRowItemSelectedRow")
     m.buttonRowList.observeField("rowItemSelected", "onRowItemSelected")
 end sub
 
@@ -71,13 +70,6 @@ sub onRowItemSelected(event)
     m.screenTitle.text = content.TITLE
 end sub
 
-sub onRowItemSelectedRow(event)
-    indexPositions = event.getData() 
-    content = m.rowList.content.getChild(indexPositions[0]).getChild(indexPositions[1])
-    m.backgroundPoster.uri = content.HDPOSTERURL
-    
-end sub
-
 sub onDialogButtonSelected(event as Object)
     option = event.getData().toStr()
     m.top.GetScene().dialog = invalid
@@ -95,7 +87,11 @@ sub onRowItemFocused(event as Object)
     row = event.getData()[0]
     index = event.getData()[1]
 
+    content = m.rowList.content.getChild(row).getChild(index)
+    m.backgroundPoster.uri = content.HDPOSTERURL
+
     rowContent = m.rowList.content.getChild(row)
+
     for i = 0 to rowContent.getChildCount() - 1
         itemContent = rowContent.getChild(i)
         if i = index

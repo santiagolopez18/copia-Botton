@@ -43,7 +43,7 @@
 
         <Label
             id = "screenTitle"
-            text = "select a Button"
+            text = "Select a Button"
             translation = "[100, 250]"
             color = "#D8DADC"
             width = "900"
