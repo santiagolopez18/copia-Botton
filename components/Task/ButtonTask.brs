@@ -15,6 +15,7 @@ sub requestButtons()
             if button.visible = true
                 item = createObject("roSGNode","ContentNode")
                 item.title = button.labels.default
+                item.addFields({"enable": button.enable})
                 section.appendChild(item)
 
                 if section.getChildCount()=5
@@ -26,6 +27,5 @@ sub requestButtons()
 
         
     m.top.output = content
-
 
 end sub 

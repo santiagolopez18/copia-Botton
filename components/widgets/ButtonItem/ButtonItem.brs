@@ -17,6 +17,14 @@ sub onItemContentChanged(event)
     item = event.getData()
     m.label.text = item.TITLE
 
+    if item.enable = false
+        m.Focus.visible = true
+        m.label.color = "#6F6E6E"
+    end if
+
+    m.background.width  = m.label.boundingRect().width + 40
+    m.Focus.width  = m.label.boundingRect().width + 40
+
     xAxis = (m.background.width / 2) - (m.label.boundingRect().width/2)
     yAxis = (m.background.height / 2) - (m.label.boundingRect().height/2)
     
